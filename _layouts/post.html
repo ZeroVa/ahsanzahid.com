@@ -1,9 +1,18 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-{{ content }}
+<div class="home-wrap">
+	{% include header.html %}
+	<div class="home-section">
+		<div class="flex">
+			<div class="col-2">
+				<h2>{{ page.title }}</h2>
+				<p class="meta">{{ page.date | date_to_string }}</p>
+				
+				<div class="post">
+				{{ content }}
+				</div>	
+			</div>
+		</div>
+	</div>
 </div>

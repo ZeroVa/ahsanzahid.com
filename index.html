@@ -1,16 +1,27 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Ahsan Zahid
 ---
 
-{% include hello.html %}
+<div class="home-wrap">
+	{% include header.html %}
+
+	<div class="home-section">
+
+		<div class="flex">
+			<div class=".col-2">
+			  <h1>Blog</h1>
+			  <ul class="posts">
+			    {% for post in site.posts %}
+			      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+			    {% endfor %}
+			  </ul>
+			</div>
+		</div>
+		<!-- {% include center.html %} -->
+		
+		<div style="height: 2000px"></div>
+	</div>
 
 
-<!-- <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div> -->
+</div>

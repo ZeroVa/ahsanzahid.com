@@ -1,0 +1,45 @@
+
+.home-wrap
+	display: flex
+	min-height: 100vh
+
+	@media (max-width: 775px)
+		display: block
+
+.home-section
+	flex: 1
+	background: lighten(grey, 45%)
+
+	section
+		padding: 50px 0
+
+	.flex
+		display: flex
+		flex-direction: rows
+		justify-content: center
+
+	.flex--center
+		justify-content: center
+
+	.flex--space-around
+		justify-content: space-around
+		order: -1
+
+// columns
+.col-1
+	max-width: 300px
+	margin: 0 10px
+
+.col-2
+	min-width: 620px
+	margin: 0 10px
+
+.col-50
+	width: 50%
+@media (max-width: 640px)
+	.home-section .flex
+		display: block
+	.col-1
+		max-width: 100%
+	.col-50
+		width: auto

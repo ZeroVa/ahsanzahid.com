@@ -18,6 +18,11 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
+gulp.task('images-added', function(){
+    browserSync.notify(messages.jekyllBuild);
+    return gulp.src('/assets/img/*')
+        .pipe(gulp.dest('_site/assets/img'));
+    });
 /**
  * Rebuild Jekyll & do page reload
  */
@@ -70,6 +75,7 @@ gulp.task('jade', function(){
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_includes/*'], ['jekyll-rebuild']);
+    gulp.watch(['/assets/img/*'], ['images-added']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 
